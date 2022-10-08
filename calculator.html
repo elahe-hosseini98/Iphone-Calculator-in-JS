@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script src="../../jquery/jquery-3.3.1.min.js"></script>
+    <script src="calculator.js"></script>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+
+<div class="calculator">
+    <div class="displayer">
+        <p id="display"></p>
+        <p id="op"></p>
+    </div>
+    <div class="container">
+        <div class="row handler">
+            <div class="col-9">
+                <div class="row">
+                    <div class="col-4">
+                        <button id="clear" class="btn gray">AC</button>
+                    </div>
+                    <div class="col-4">
+                        <button id="change-sign" class="btn gray">+/-</button>
+                    </div>
+                    <div class="col-4">
+                        <button id="percent" class="btn gray">%</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <button id="7" class="btn">7</button>
+                    </div>
+                    <div class="col-4">
+                        <button id="8" class="btn">8</button>
+                    </div>
+                    <div class="col-4">
+                        <button id="9" class="btn">9</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <button id="4" class="btn">4</button>
+                    </div>
+                    <div class="col-4">
+                        <button id="5" class="btn">5</button>
+                    </div>
+                    <div class="col-4">
+                        <button id="6" class="btn">6</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <button id="1" class="btn">1</button>
+                    </div>
+                    <div class="col-4">
+                        <button id="2" class="btn">2</button>
+                    </div>
+                    <div class="col-4">
+                        <button id="3" class="btn">3</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <button id="0" class="btn zero">0</button>
+                    </div>
+                    <div class="col-4">
+                        <button id="float" class="btn">.</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-3">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12">
+                            <button id="divide" class="btn orange">÷</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button id="time" class="btn orange">×</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button id="subtractc" class="btn orange minus">_</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button id="add" class="btn orange">+</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button id="equal" class="btn orange">=</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var ans = 0, op = "none", doingAnAct = false;
+    $('#display').html("0");
+    $('#0').click(function () {
+        if ($('#display').html().length < 10 && $('#display').html() != "" && $('#display').html() != "0") {
+            $('#display').append("0");
+        }
+    });
+    $('#1').click(function () {
+        if (doingAnAct == true) {
+            $('#display').html("");
+            doingAnAct = false;
+        }
+        if ($('#clear').text() == "AC"){
+            $('#clear').text("C");
+        }
+        if ($('#display').html() == "0") {
+            $('#display').html("");
+        }
+        if ($('#display').html().length < 10 || $('#display').html() == "") {
+            $('#display').append("1");
+        }
+    });
+    $('#2').click(function () {
+        if (doingAnAct == true) {
+            $('#display').html("");
+            doingAnAct = false;
+        }
+        if ($('#display').html() == "0") {
+            $('#display').html("");
+        }
+        if ($('#clear').text() == "AC"){
+            $('#clear').text("C");
+        }
+        if ($('#display').html().length < 10 || $('#display').html() == "") {
+            $('#display').append("2");
+        }
+    });
+    $('#3').click(function () {
+        if (doingAnAct == true) {
+            $('#display').html("");
+            doingAnAct = false;
+        }
+        if ($('#clear').text() == "AC"){
+            $('#clear').text("C");
+        }
+        if ($('#display').html() == "0") {
+            $('#display').html("");
+        }
+        if ($('#display').html().length < 10 || $('#display').html() == "") {
+            $('#display').append("3");
+        }
+    });
+    $('#4').click(function () {
+        if (doingAnAct == true) {
+            $('#display').html("");
+            doingAnAct = false;
+        }
+        if ($('#clear').text() == "AC"){
+            $('#clear').text("C");
+        }
+        if ($('#display').html() == "0") {
+            $('#display').html("");
+        }
+        if ($('#display').html().length < 10 || $('#display').html() == "") {
+            $('#display').append("4");
+        }
+    });
+    $('#5').click(function () {
+        if (doingAnAct == true) {
+            $('#display').html("");
+            doingAnAct = false;
+        }
+        if ($('#clear').text() == "AC"){
+            $('#clear').text("C");
+        }
+        if ($('#display').html() == "0") {
+            $('#display').html("");
+        }
+        if ($('#display').html().length < 10 || $('#display').html() == "") {
+            $('#display').append("5");
+        }
+    });
+    $('#6').click(function () {
+        if (doingAnAct == true) {
+            $('#display').html("");
+            doingAnAct = false;
+        }
+        if ($('#display').html() == "0") {
+            $('#display').html("");
+        }
+        if ($('#display').html().length < 10 || $('#display').html() == "") {
+            $('#display').append("6");
+        }
+    });
+    $('#7').click(function () {
+        if (doingAnAct == true) {
+            $('#display').html("");
+            doingAnAct = false;
+        }
+        if ($('#clear').text() == "AC"){
+            $('#clear').text("C");
+        }
+        if ($('#display').html() == "0") {
+            $('#display').html("");
+        }
+        if ($('#display').html().length < 10 || $('#display').html() == "") {
+            $('#display').append("7");
+        }
+    });
+    $('#8').click(function () {
+        if (doingAnAct == true) {
+            $('#display').html("");
+            doingAnAct = false;
+        }
+        if ($('#clear').text() == "AC"){
+            $('#clear').text("C");
+        }
+        if ($('#display').html() == "0") {
+            $('#display').html("");
+        }
+        if ($('#display').html().length < 10 || $('#display').html() == "") {
+            $('#display').append("8");
+        }
+    });
+    $('#9').click(function () {
+        if (doingAnAct == true) {
+            $('#display').html("");
+            doingAnAct = false;
+        }
+        if ($('#clear').text() == "AC"){
+            $('#clear').text("C");
+        }
+        if ($('#display').html() == "0") {
+            $('#display').html("");
+        }
+        if ($('#display').html().length < 10 || $('#display').html() == "") {
+            $('#display').append("9");
+        }
+    });
+    $('#add').click(function () {
+        doingAnAct = true;
+        op = "add";
+        $("#op").html("+");
+        if ($('#display').html() != "") {
+            ans = parseFloat($('#display').html());
+        }
+    });
+    $('#subtractc').click(function () {
+        doingAnAct = true;
+        op = "sub";
+        $("#op").html("_");
+        if ($('#display').html() != "") {
+            ans = parseFloat($('#display').html());
+        }
+    });
+    $('#time').click(function () {
+        doingAnAct = true;
+        op = "time";
+        $("#op").html("×");
+        if ($('#display').html() != "") {
+            ans = parseFloat($('#display').html());
+        }
+    });
+    $('#divide').click(function () {
+        doingAnAct = true;
+        op = "div";
+        $("#op").html("÷");
+        if ($('#display').html() != "") {
+            ans = parseFloat($('#display').html());
+        }
+    });
+    $('#clear').click(function () {
+        op = "none";
+        ans = 0;
+        $("#op").html("");
+        $('#display').html("0");
+        $('#clear').text("AC");
+    });
+    $('#change-sign').click(function () {
+        ans = -ans;
+        op = "none";
+        $("#op").html("");
+        $('#display').html(-parseFloat($('#display').html()));
+    });
+    $('#percent').click(function () {
+        op = "none";
+        $("#op").html("");
+        if ((ans / 100).toString().length < 10) {
+            ans /= 100;
+            $("#display").html(parseFloat($('#display').html() / 100));
+        }
+    });
+    $('#float').click(function () {
+        var x = $('#display').html();
+        if (x.indexOf('.') == -1 && x.length <= 8) {
+            $('#display').append(".");
+        }
+    });
+    $('#equal').click(function () {
+        $("#op").html("");
+        if (op == "none") {
+            $('#display').html($('#display').html());
+        }
+        if ($('#display') != "" && op != "none") {
+            if (op == "add") {
+                ans += parseFloat($('#display').html());
+            }
+            if (op == "sub") {
+                ans -= parseFloat($('#display').html());
+            }
+            if (op == "time") {
+                ans *= parseFloat($('#display').html());
+            }
+            if (op == "div") {
+                ans /= parseFloat($('#display').html());
+            }
+            op = "none";
+            var len = ans.toString().length;
+            if (len > 10 && Math.abs(ans) > 10000000000) {
+                while (len > 10) {
+                    ans = parseFloat(ans / 10);
+                    len -= 1;
+                }
+            }
+            else if (len > 10 && Math.abs(ans) < 10000000000) {
+                var temp = ans.toString();
+                while (len > 10) {
+                    temp = temp.substring(0, temp.length - 1);
+                    len -= 1;
+                }
+                ans = parseFloat(temp);
+            }
+            $('#display').html(ans);
+        }
+    });
+
+</script>
+</body>
+</html>
